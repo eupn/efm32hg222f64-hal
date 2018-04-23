@@ -1,8 +1,7 @@
 # `efm32hg222f64-hal`
 
-> Some `embedded-hal` traits implemented for EFM32HG222F64 based on `emlib`
-
-# [Documentation](https://docs.rs/cortex-m-quickstart)
+> Some [embedded-hal](https://github.com/japaric/embedded-hal) traits implemented for EFM32HG222F64
+based on [emlib](https://github.com/eupn/emlib) crate.
 
 # License
 
