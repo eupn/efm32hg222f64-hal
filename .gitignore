@@ -1,4 +1,7 @@
 **/*.rs.bk
+.idea
+.vscode
+*.iml
 .gdb_history
 Cargo.lock
 target/
