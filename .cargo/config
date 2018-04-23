@@ -1,0 +1,11 @@
+[target.thumbv6m-none-eabi]
+runner = 'arm-none-eabi-gdb'
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+  "-C", "linker=../cortex-m-rt-ld/cortex-m-rt-ld",
+  "-Z", "linker-flavor=ld",
+  "-Z", "thinlto=no",
+]
+
+[build]
+target = "thumbv6m-none-eabi"

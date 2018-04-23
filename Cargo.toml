@@ -1,0 +1,44 @@
+[package]
+authors = ["EP"]
+categories = ["embedded", "hal", "efm32", "cortex-m0", "emlib", "no-std"]
+description = "An implementation of embedded-hal for EFM32HG222F64 MCU"
+keywords = ["arm", "cortex-m", "template"]
+license = "MIT OR Apache-2.0"
+name = "efm32hg222f64-hal"
+repository = "https://github.com/eupn/efm32hg222f64-hal"
+version = "0.0.1"
+
+[dependencies]
+cortex-m = "0.4.*"
+cortex-m-semihosting = "0.2.0"
+cortex-m-rt-ld = "0.1.1"
+emlib = { git = "https://github.com/eupn/emlib" }
+embedded-hal = "0.1.2"
+
+[dependencies.efm32hg222f64]
+features = ["rt"]
+version = "*"
+
+[dependencies.cast]
+default-features = false
+version = "0.2.2"
+
+[dependencies.cortex-m-rt]
+features = ["abort-on-panic"]
+version = "0.3.12"
+
+[features]
+rt = ["efm32hg222f64/rt"]
+
+[build-dependencies]
+cc = "1.0.4"
+
+# disable both incremental compilation and parallel codegen to reduce the chances of running into
+# rust-lang/rust#47074
+[profile.dev]
+codegen-units = 1
+incremental = false
+
+[profile.release]
+debug = true
+lto = true
